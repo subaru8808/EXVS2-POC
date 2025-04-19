@@ -66,6 +66,14 @@ namespace Server.Migrations
                 type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+
+            migrationBuilder.AddColumn<ulong>(
+                name: "LastPlayedAt",
+                table: "card_profile",
+                type: "INTEGER",
+                nullable: false,
+                defaultValue: 0UL);
+
         }
 
         /// <inheritdoc />
@@ -101,6 +109,10 @@ namespace Server.Migrations
 
             migrationBuilder.DropColumn(
                 name: "UpdateTime",
+                table: "card_profile");
+
+            migrationBuilder.DropColumn(
+                name: "LastPlayedAt",
                 table: "card_profile");
         }
     }
