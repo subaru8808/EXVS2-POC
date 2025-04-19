@@ -32,6 +32,8 @@ public class CardProfile : BaseEntity
     public string DistinctTeamFormationToken { get; set; } = Guid.NewGuid().ToString("n").Substring(0, 16);
     
     public ICollection<UploadImage> UploadImages { get; } = new List<UploadImage>(); 
+
+    public DateTime LastPlayedAt { get; set; } = DateTime.Now;
     
     public ICollection<UploadReplay> UploadReplays { get; } = new List<UploadReplay>(); 
     public ICollection<SharedUploadReplay> SharedUploadReplays { get; } = new List<SharedUploadReplay>(); 
