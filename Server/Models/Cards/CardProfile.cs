@@ -33,7 +33,7 @@ public class CardProfile : BaseEntity
     
     public ICollection<UploadImage> UploadImages { get; } = new List<UploadImage>(); 
 
-    public DateTime LastPlayedAt { get; set; } = DateTime.Now;
+    public ulong LastPlayedAt { get; set; } = (ulong)DateTimeOffset.Now.ToUnixTimeSeconds();
     
     public ICollection<UploadReplay> UploadReplays { get; } = new List<UploadReplay>(); 
     public ICollection<SharedUploadReplay> SharedUploadReplays { get; } = new List<SharedUploadReplay>(); 
